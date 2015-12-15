@@ -12,3 +12,39 @@ Import-Module Empiria.AgressoFramework
 
 Write-Host "Setting Location to git folder" -ForegroundColor yellow
 Set-Location "e:\projects"
+
+function gst() {
+    git status
+}
+
+function gco($branch) {
+    git checkout $branch
+}
+
+function gp() {
+    git push
+}
+
+function mct($ticket) {
+    matador create-ticket -t $ticket
+}
+
+function mcp($package) {
+    matador create-package -p $package
+}
+
+function mt2p($ticket, $package) {
+    matador add-t2p -t $ticket -p $package
+}
+
+function mdt($env, $ticket) {
+    matador deploy-ticket -e $env -t $ticket
+}
+
+function mdp($env, $package) {
+    matador deploy-package -e $env -p $package
+}
+
+function mrp($env, $package) {
+    matador remove-package -e $env -p $package
+}
