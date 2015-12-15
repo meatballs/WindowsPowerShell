@@ -25,6 +25,9 @@ function gp() {
     git push
 }
 
+function glg() {
+    git log --pretty=format:"%C(yellow)%h%C(green)%d %Creset%s%C(blue) [%cn]" --decorate
+}
 
 function mct($ticket) {
     matador create-ticket -t $ticket
