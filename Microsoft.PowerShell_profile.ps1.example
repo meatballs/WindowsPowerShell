@@ -25,6 +25,7 @@ function gp() {
     git push
 }
 
+
 function mct($ticket) {
     matador create-ticket -t $ticket
 }
