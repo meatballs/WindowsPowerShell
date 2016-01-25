@@ -4,12 +4,6 @@ $a.ForegroundColor = "Black"
 Write-Host "Loading Personal Module" -foregroundcolor yellow
 Import-Module Personal
 
-Write-Host "Loading ssh-agent-utils Module" -foregroundcolor yellow
-Import-Module ssh-agent-utils
-
-Write-Host "Loading Agresso Framework Module" -foregroundcolor yellow
-Import-Module Empiria.AgressoFramework
-
 Write-Host "Setting Location to git folder" -ForegroundColor yellow
 Set-Location "e:\projects"
 
@@ -27,6 +21,10 @@ function gp() {
 
 function glg() {
     git log --pretty=format:"%C(yellow)%h%C(green)%d %Creset%s%C(blue) [%cn]" --decorate
+}
+
+function gc($message) {
+    git commit -a -m $message
 }
 
 function mct($ticket) {
@@ -52,3 +50,8 @@ function mdp($env, $package) {
 function mrp($env, $package) {
     matador remove-package -e $env -p $package
 }
+
+function abw($server, $action) {
+    (get-service -ComputerName $server -Name 'Agresso 5.7.1 Server (x64) - Agresso').$action
+}
+
