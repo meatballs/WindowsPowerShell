@@ -15,6 +15,12 @@ function gco($branch) {
     git checkout $branch
 }
 
+del alias:gcm -Force
+
+function gcm() {
+    git checkout master
+}
+
 function gp() {
     git push
 }
