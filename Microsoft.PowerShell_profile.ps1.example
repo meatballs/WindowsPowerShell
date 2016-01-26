@@ -4,8 +4,8 @@ $a.ForegroundColor = "Black"
 Write-Host "Loading Personal Module" -foregroundcolor yellow
 Import-Module Personal
 
-Write-Host "Setting Location to git folder" -ForegroundColor yellow
-Set-Location "e:\projects"
+# Write-Host "Setting Location to git folder" -ForegroundColor yellow
+# Set-Location "e:\projects"
 
 function gst() {
     git status
